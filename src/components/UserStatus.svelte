@@ -5,7 +5,7 @@
 	export let discordUser: DiscordUser['data']['discord_user'];
 </script>
 
-<div class="flex gap-x-6 items-center h-max">
+<div class="flex flex-col gap-x-6 items-center h-max lg:flex-row">
 	<div class="h-32 relative">
 		<img
 			src={`https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.png`}
@@ -16,7 +16,7 @@
 			class={`h-8 w-8 rounded-full absolute bottom-0.5 right-0.5 border-4 border-black ${data.discord_status === 'online' ? 'bg-green-500' : data.discord_status === 'dnd' ? 'bg-red-500' : data.discord_status === 'idle' ? 'bg-yellow-500' : 'bg-gray-500'}`}
 		/>
 	</div>
-	<div class="flex flex-col gap-y-1">
+	<div class="flex items-center flex-col gap-y-1 lg:items-start">
 		<h1 class="text-3xl font-bold mt-4">@{discordUser.username}</h1>
 		<div class="flex gap-x-1.5 text-xs items-center px-1.5 py-1 bg-black/40 w-max rounded-md">
 			<div
