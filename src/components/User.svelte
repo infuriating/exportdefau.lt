@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getUserData } from '$lib/api';
 	import type { DiscordUser } from '$lib/types';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import UserStatus from './UserStatus.svelte';
 	import Spotify from './Spotify.svelte';
 	import Socials from './Socials.svelte';
@@ -12,12 +12,21 @@
 	let spotify: DiscordUser['data']['spotify'];
 	let activities: DiscordUser['data']['activities'];
 
-	onMount(async () => {
+	const refreshUserData = async () => {
 		user = await getUserData('161948341461057536');
 		data = user.data;
 		discordUser = user.data.discord_user;
 		spotify = user.data.spotify;
 		activities = user.data.activities;
+	};
+
+	onMount(async () => {
+		await refreshUserData();
+		const interval = setInterval(refreshUserData, 15000);
+
+		onDestroy(() => {
+			clearInterval(interval);
+		});
 	});
 </script>
 
