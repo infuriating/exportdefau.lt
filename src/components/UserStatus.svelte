@@ -23,7 +23,9 @@
 				class={`h-2 w-2 rounded-full ${data.discord_status === 'online' ? 'bg-green-500' : data.discord_status === 'dnd' ? 'bg-red-500' : data.discord_status === 'idle' ? 'bg-yellow-500' : 'bg-gray-500'}`}
 			></div>
 			<p>
-				{data.discord_status.charAt(0).toUpperCase() + data.discord_status.slice(1)}
+				{data.discord_status === 'dnd'
+					? 'Do Not Disturb'
+					: data.discord_status.charAt(0).toUpperCase() + data.discord_status.slice(1)}
 			</p>
 		</div>
 	</div>
