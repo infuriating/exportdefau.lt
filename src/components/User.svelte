@@ -40,7 +40,7 @@
 			{#if spotify}
 				<Spotify {spotify} />
 			{/if}
-			{#if activities}
+			{#if activities && activities.length > 0}
 				<Activities {activities} />
 			{/if}
 			<Socials />
