@@ -42,6 +42,8 @@ export type DiscordUser = {
 			assets: {
 				large_image: string;
 				large_text: string;
+				small_image: string;
+				small_text: string;
 			};
 			sync_id: string;
 			created_at: number;
