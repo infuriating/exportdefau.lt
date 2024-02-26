@@ -5,6 +5,7 @@
 	import UserStatus from './UserStatus.svelte';
 	import Spotify from './Spotify.svelte';
 	import Socials from './Socials.svelte';
+	import Activities from './Activities.svelte';
 
 	let user: DiscordUser;
 	let data: DiscordUser['data'];
@@ -36,6 +37,9 @@
 			<UserStatus {data} {discordUser} />
 			{#if spotify}
 				<Spotify {spotify} />
+			{/if}
+			{#if activities}
+				<Activities {activities} />
 			{/if}
 			<Socials />
 		</div>
