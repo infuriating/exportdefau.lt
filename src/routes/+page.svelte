@@ -6,5 +6,5 @@
 	<div
 		class="absolute bg-purple-900/25 blur-[100px] h-[75vh] aspect-square rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-0"
 	/>
-	<User />
+	<User userId="161948341461057536" />
 </div>
