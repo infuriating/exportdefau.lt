@@ -6,6 +6,7 @@
 	import Spotify from './Spotify.svelte';
 	import Socials from './Socials.svelte';
 	import Activities from './Activities.svelte';
+	import InfsWorld from './InfsWorld.svelte';
 
 	export let userId: string;
 	export let socials: { url: string; icon: any }[];
@@ -47,6 +48,7 @@
 				<Activities {activities} />
 			{/if}
 			<Socials {socials} />
+			<InfsWorld />
 		</div>
 	{/if}
 </div>
