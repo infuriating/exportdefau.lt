@@ -26,6 +26,13 @@
 			alt="User Avatar"
 			class={`rounded-full w-32 h-32 border-4 ${statusOptionsBorder[data.discord_status]}`}
 		/>
+		{#if discordUser.avatar_decoration_data}
+			<img
+				src={`https://cdn.discordapp.com/avatar-decoration-presets/${discordUser.avatar_decoration_data.asset}.png`}
+				alt="User Avatar"
+				class="rounded-full scale-125 top-0 absolute"
+			/>
+		{/if}
 	</div>
 	<div class="flex items-center flex-col gap-y-1 lg:items-start">
 		<h1 class="text-3xl font-bold mt-4">@{discordUser.username}</h1>
