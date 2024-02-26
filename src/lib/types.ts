@@ -27,6 +27,7 @@ export type DiscordUser = {
 			public_flags: number;
 		};
 		activities: Array<{
+			application_id: string;
 			flags: number;
 			id: string;
 			name: string;
