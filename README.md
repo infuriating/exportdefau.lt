@@ -1,6 +1,10 @@
-# Discord User API
+# Svelte App
 
-This is a svelte app that uses an **Discord User API** to get user information, in this case I demonstrate it using my own user id.
+This is my first svelte app, I am using it to learn the basics of svelte and to get a feel for how it works.
+
+## Discord User API
+
+This is svelte app uses an **Discord User API** to get user information, in this case I demonstrate it using my own user id.
 
 ### API URL
 
