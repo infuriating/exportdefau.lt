@@ -7,6 +7,9 @@
 	import Socials from './Socials.svelte';
 	import Activities from './Activities.svelte';
 
+	export let userId: string;
+	export let socials: { url: string; icon: any }[];
+
 	let user: DiscordUser;
 	let data: DiscordUser['data'];
 	let discordUser: DiscordUser['data']['discord_user'];
@@ -14,7 +17,7 @@
 	let activities: DiscordUser['data']['activities'];
 
 	const refreshUserData = async () => {
-		user = await getUserData('161948341461057536');
+		user = await getUserData(userId);
 		data = user.data;
 		discordUser = user.data.discord_user;
 		spotify = user.data.spotify;
@@ -43,7 +46,7 @@
 			{#if activities && activities.length > 0}
 				<Activities {activities} />
 			{/if}
-			<Socials />
+			<Socials {socials} />
 		</div>
 	{/if}
 </div>
