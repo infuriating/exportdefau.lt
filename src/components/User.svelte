@@ -37,7 +37,7 @@
 <div class="flex flex-col items-center justify-center h-screen">
 	{#if user}
 		<div
-			class="bg-purple-950/25 border border-white/15 shadow-2xl backdrop-blur-lg pr-24 pl-12 py-6 rounded-md z-20"
+			class="bg-purple-950/25 border border-white/15 shadow-2xl backdrop-blur-lg lg:pr-24 px-12 py-6 rounded-md z-20"
 		>
 			<UserStatus {data} {discordUser} />
 			{#if spotify}
