@@ -37,8 +37,10 @@
 	<div class="flex items-center flex-col lg:items-start">
 		<h1 class="lg:w-full text-3xl font-bold mt-4">{discordUser.global_name}</h1>
 		<h1 class="text-sm text-neutral-300 font-semibold">@{discordUser.username}</h1>
-		<div class="flex mt-2 gap-x-1.5 text-xs items-center px-1.5 py-1 bg-black/40 w-max rounded-md">
-			<div class={`h-2 w-2 rounded-full ${statusOptions[data.discord_status]}`}></div>
+		<div
+			class="flex mt-2 gap-x-1.5 text-2xs font-medium items-center px-1.5 py-1 bg-black/40 w-max rounded-md"
+		>
+			<div class={`h-1.5 w-1.5 rounded-full ${statusOptions[data.discord_status]}`}></div>
 			<p>
 				{data.discord_status === 'dnd'
 					? 'Do Not Disturb'
