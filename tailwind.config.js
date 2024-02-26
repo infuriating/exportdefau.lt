@@ -5,6 +5,9 @@ export default {
 		extend: {
 			fontSize: {
 				'2xs': '0.625rem'
+			},
+			animation: {
+				'spin-slow': 'spin 5s linear infinite'
 			}
 		}
 	},
