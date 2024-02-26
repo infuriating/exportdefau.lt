@@ -1,22 +1,5 @@
 <script lang="ts">
-	import RiLinkedinFill from '~icons/ri/linkedin-fill';
-	import RiInstagramFill from '~icons/ri/instagram-fill';
-	import RiGithubFill from '~icons/ri/github-fill';
-
-	const socials = [
-		{
-			url: 'https://linkedin.com/in/lucakuiper',
-			icon: RiLinkedinFill
-		},
-		{
-			url: 'https://instagram.com/infs.world',
-			icon: RiInstagramFill
-		},
-		{
-			url: 'https://github.com/infuriating',
-			icon: RiGithubFill
-		}
-	];
+	export let socials: { url: string; icon: any }[];
 </script>
 
 <div class="h-px w-full bg-gray-600 my-4" />
