@@ -35,6 +35,11 @@ export type DiscordUser = {
 			state: string;
 			session_id: string;
 			details: string;
+			emoji: {
+				id: string;
+				name: string;
+				animated: boolean;
+			};
 			timestamps: {
 				start: number;
 				end: number;
