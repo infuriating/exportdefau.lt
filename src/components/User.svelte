@@ -35,7 +35,7 @@
 	});
 </script>
 
-<div class="flex flex-col items-center justify-center h-screen">
+<div class="flex flex-col items-center justify-center min-h-screen p-4">
 	{#if user}
 		<div
 			class="bg-purple-950/25 border border-white/15 shadow-2xl backdrop-blur-lg lg:pr-24 px-12 py-6 rounded-md z-20"
