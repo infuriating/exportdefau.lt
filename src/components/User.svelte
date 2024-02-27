@@ -47,7 +47,7 @@
 				{#if spotify}
 					<Spotify {spotify} />
 				{/if}
-				{#if activities && activities.length > 0 && activities[0].name !== 'Spotify'}
+				{#if activities.filter((activity) => activity.name !== 'Spotify').length > 0}
 					<Activities {activities} />
 				{/if}
 				<Socials {socials} />
