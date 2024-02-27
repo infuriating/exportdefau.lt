@@ -13,7 +13,7 @@
 		alt="CD"
 	/>
 	<img src={spotify.album_art_url} alt="Album Art" class="rounded-md w-32 h-32" />
-	<div class="flex flex-col justify-end py-2">
+	<div class="flex flex-col justify-end py-2 max-w-96 lg:max-w-lg">
 		<h1 class="text-xl font-bold">{spotify.song}</h1>
 		<p class="text-sm text-gray-300">
 			by <span class="text-white font-medium">{spotify.artist.replaceAll(';', ',')}</span>
