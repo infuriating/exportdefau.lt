@@ -14,7 +14,7 @@
 				<!-- svelte-ignore a11y-img-redundant-alt -->
 				{#if activity.assets}
 					<div class={`relative w-max ${index > 1 ? 'h-24' : 'h-32'}`}>
-						{#if activity.assets.large_image}
+						{#if activity.assets.large_image && !activity.assets.large_image.includes('mp:external')}
 							<img
 								src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`}
 								alt="Activity Image"
@@ -23,7 +23,7 @@
 									: 'min-w-32 h-32'}"
 							/>
 						{/if}
-						{#if activity.assets.small_image}
+						{#if activity.assets.small_image && !activity.assets.small_image.includes('mp:external')}
 							<img
 								src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.png`}
 								alt="Activity Image"
