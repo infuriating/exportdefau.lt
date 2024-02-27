@@ -34,9 +34,21 @@
 				{/if}
 				<div class="flex flex-col justify-end py-2">
 					<h1 class="text-xl font-bold">{activity.name}</h1>
-					<p class="text-sm text-gray-300">{activity.details ? activity.details : ''}</p>
-					<p class="text-sm text-gray-300">{activity.state ? activity.state : ''}</p>
-					<p class="text-xs text-gray-300">{timeSince(activity.timestamps.start)}</p>
+					<p class="text-sm text-gray-300">
+						{activity.details ? activity.details : ''}
+					</p>
+					<p class="text-sm text-gray-300 flex items-center">
+						{#if activity.emoji}
+							<img
+								src={`https://cdn.discordapp.com/emojis/${activity.emoji.id}.${activity.emoji.animated ? 'gif' : 'png'}`}
+								alt="Emoji"
+								class="w-4 h-4 mr-1"
+							/>
+						{/if}{activity.state ? activity.state : ''}
+					</p>
+					{#if activity.name !== 'Custom Status'}
+						<p class="text-xs text-gray-300">{timeSince(activity.timestamps.start)}</p>
+					{/if}
 				</div>
 			</div>
 		{/if}
