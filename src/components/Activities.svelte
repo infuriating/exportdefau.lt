@@ -12,9 +12,9 @@
 		{#if activity.name !== 'Spotify'}
 			<div class="flex flex-col md:flex-row gap-x-4 pt-4">
 				<!-- svelte-ignore a11y-img-redundant-alt -->
-				{#if activity.assets}
+				{#if activity.assets && (!activity.assets.large_image.includes('mp:external') || !activity.assets.small_image.includes('mp:external'))}
 					<div class={`relative w-max ${index > 1 ? 'h-24' : 'h-32'}`}>
-						{#if activity.assets.large_image && !activity.assets.large_image.includes('mp:external')}
+						{#if activity.assets.large_image}
 							<img
 								src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`}
 								alt="Activity Image"
@@ -23,7 +23,7 @@
 									: 'min-w-32 h-32'}"
 							/>
 						{/if}
-						{#if activity.assets.small_image && !activity.assets.small_image.includes('mp:external')}
+						{#if activity.assets.small_image}
 							<img
 								src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.png`}
 								alt="Activity Image"
