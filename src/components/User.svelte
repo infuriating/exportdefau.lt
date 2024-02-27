@@ -35,9 +35,9 @@
 	});
 </script>
 
-<div class="flex flex-col items-center justify-center min-h-screen p-4">
+<div class="flex flex-col items-center justify-center min-h-screen">
 	<div
-		class="bg-gradient-to-b from-purple-950/50 to-black p-3 rounded-lg shadow-2xl border border-neutral-300/20"
+		class="w-full md:w-max bg-gradient-to-b from-purple-950/50 to-black p-3 rounded-lg shadow-2xl border border-neutral-300/20"
 	>
 		{#if user}
 			<div
