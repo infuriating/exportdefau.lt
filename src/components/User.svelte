@@ -50,7 +50,7 @@
 				{#if activities.filter((activity) => activity.name !== 'Spotify' && activity.name !== 'Custom Status').length > 0}
 					<Activities {activities} />
 				{/if}
-				<Socials {socials} />x
+				<Socials {socials} />
 				<InfsWorld />
 			</div>
 		{/if}
