@@ -21,7 +21,7 @@
 	};
 </script>
 
-<div class="flex flex-col gap-x-6 items-center h-max lg:flex-row">
+<div class="flex flex-col gap-x-6 items-center h-max lg:flex-row min-w-60 lg:min-w-72">
 	<div class="h-32 relative">
 		<img
 			src={`https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.png`}
@@ -36,11 +36,13 @@
 			/>
 		{/if}
 	</div>
-	<div class="flex items-center flex-col lg:items-start">
-		<h1 class="lg:w-full text-3xl font-bold mt-4">{discordUser.global_name}</h1>
-		<h1 class="text-sm text-neutral-300 font-semibold">@{discordUser.username}</h1>
+	<div class="flex items-center gap-y-1 flex-col lg:items-start">
+		<div class="flex items-center flex-col lg:items-start">
+			<h1 class="lg:w-full text-3xl font-bold mt-4">{discordUser.global_name}</h1>
+			<h1 class="text-sm text-neutral-300 font-semibold">@{discordUser.username}</h1>
+		</div>
 		<div
-			class="flex mt-2 gap-x-1.5 text-2xs font-medium items-center px-1.5 py-1 bg-black/40 w-max rounded-md"
+			class="flex gap-x-1.5 text-2xs font-medium items-center px-1.5 py-1 bg-black/40 w-max rounded-md"
 		>
 			<div class={`h-1.5 w-1.5 rounded-full ${statusOptions[data.discord_status]}`}></div>
 			<p>
