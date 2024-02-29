@@ -43,14 +43,14 @@
 			<div
 				class="bg-black/15 shadow-inset border border-white/10 backdrop-blur-lg lg:pr-24 px-12 py-6 rounded-md z-20"
 			>
-				<UserStatus {data} {discordUser} />
+				<UserStatus {data} {discordUser} {activities} />
 				{#if spotify}
 					<Spotify {spotify} />
 				{/if}
-				{#if activities.filter((activity) => activity.name !== 'Spotify').length > 0}
+				{#if activities.filter((activity) => activity.name !== 'Spotify' && activity.name !== 'Custom Status').length > 0}
 					<Activities {activities} />
 				{/if}
-				<Socials {socials} />
+				<Socials {socials} />x
 				<InfsWorld />
 			</div>
 		{/if}
