@@ -3,7 +3,9 @@
 
 	export let data: DiscordUser['data'];
 	export let discordUser: DiscordUser['data']['discord_user'];
+	export let activities: DiscordUser['data']['activities'];
 
+	activities = activities.filter((activity) => activity.name === 'Custom Status');
 	const statusOptions: Record<string, string> = {
 		online: 'bg-green-500',
 		dnd: 'bg-red-500',
@@ -47,5 +49,18 @@
 					: data.discord_status.charAt(0).toUpperCase() + data.discord_status.slice(1)}
 			</p>
 		</div>
+		{#if activities}
+			<p
+				class="text-sm text-gray-300 flex items-center border border-neutral-300/20 py-px px-0.5 rounded-md"
+			>
+				{#if activities[0].emoji}
+					<img
+						src={`https://cdn.discordapp.com/emojis/${activities[0].emoji.id}.${activities[0].emoji.animated ? 'gif' : 'png'}`}
+						alt="Emoji"
+						class="w-4 h-4 mr-1"
+					/>
+				{/if}{activities[0].state ? activities[0].state : ''}
+			</p>
+		{/if}
 	</div>
 </div>
