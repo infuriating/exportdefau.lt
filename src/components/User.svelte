@@ -17,6 +17,9 @@
 	let spotify: DiscordUser['data']['spotify'];
 	let activities: DiscordUser['data']['activities'];
 
+	let tries = 0;
+	let timedOut: boolean = false;
+
 	const refreshUserData = async () => {
 		try {
 			user = await getUserData(userId);
@@ -25,7 +28,12 @@
 			spotify = user.data.spotify;
 			activities = user.data.activities;
 		} catch (error) {
-			setTimeout(refreshUserData, 2000);
+			if (tries < 3) {
+				tries++;
+				setTimeout(refreshUserData, 2000);
+			} else {
+				timedOut = true;
+			}
 		}
 	};
 
@@ -61,14 +69,31 @@
 			<div
 				class="flex flex-col items-center justify-center min-w-64 min-h-64 px-8 py-2 shadow-inset bg-black/15 border border-white/10 max-h-96 max-w-96"
 			>
-				<div
-					class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"
-				></div>
-				<p class="text-lg font-bold mt-4">Loading user...</p>
-				<p class="text-neutral-300 mt-4 text-center">
-					If it's taking too long, the user might not exist, is not currently in the database or
-					hasn't joined <span class="font-bold text-neutral-100">discord.gg/lanyard</span>
-				</p>
+				{#if !timedOut}
+					<div
+						class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"
+					></div>
+				{/if}
+				<p class="text-lg font-bold mt-4">{timedOut ? 'Request timed out.' : 'Loading user...'}</p>
+				{#if timedOut}
+					<div class="text-neutral-300 space-y-3 mt-4 text-center">
+						<p>
+							Please make sure the user exists and has joined <span
+								class="font-bold text-neutral-100">discord.gg/lanyard</span
+							>
+						</p>
+						<p>
+							If you haven't requested your username yet, you can do so by reaching out to <span
+								class="font-bold text-neutral-100">@infuriating</span
+							> on Discord.
+						</p>
+					</div>
+				{:else}
+					<p class="text-neutral-300 mt-4 text-center">
+						If it's taking too long, the user might not exist, is not currently in the database or
+						hasn't joined <span class="font-bold text-neutral-100">discord.gg/lanyard</span>
+					</p>
+				{/if}
 			</div>
 		{/if}
 	</div>
