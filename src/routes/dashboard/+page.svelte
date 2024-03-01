@@ -4,7 +4,7 @@
 	import { collection, addDoc } from 'firebase/firestore';
 	import { SignedIn, SignedOut } from 'sveltefire';
 
-	let username = '';
+	let slug = '';
 	let userId = '';
 
 	let email = '';
@@ -13,12 +13,12 @@
 	const addNewUser = async () => {
 		try {
 			const docRef = await addDoc(collection(firestore, 'users'), {
-				username,
+				slug,
 				userId
 			});
 			console.log('Document written with ID: ', docRef.id);
 
-			username = '';
+			slug = '';
 			userId = '';
 		} catch (e) {
 			console.error('Error adding document: ', e);
@@ -42,14 +42,13 @@
 			<div class="p-6 pt-0">
 				<form on:submit|preventDefault={addNewUser} class="flex flex-col gap-y-2">
 					<div>
-						<label for="username" class="text-sm font-medium leading-none">Preferred Username</label
-						>
+						<label for="slug" class="text-sm font-medium leading-none">Preferred username</label>
 						<input
-							bind:value={username}
+							bind:value={slug}
 							class="text-black flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm placeholder:text-neutral-300"
 							type="text"
-							id="username"
-							name="username"
+							id="slug"
+							name="slug"
 							placeholder="inf"
 							required
 						/>
