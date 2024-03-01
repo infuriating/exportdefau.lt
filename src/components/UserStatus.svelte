@@ -53,13 +53,13 @@
 		</div>
 		{#if activities[0]}
 			<p
-				class="text-sm text-gray-300 flex items-center border border-neutral-300/20 py-px px-0.5 rounded-md"
+				class="text-sm text-gray-300 flex items-center border border-neutral-300/20 py-0.5 px-1 rounded-md"
 			>
 				{#if activities[0].emoji}
 					<img
 						src={`https://cdn.discordapp.com/emojis/${activities[0].emoji.id}.${activities[0].emoji.animated ? 'gif' : 'png'}`}
 						alt="Emoji"
-						class="w-4 h-4 mr-1"
+						class={`w-4 h-4 ${activities[0].state && 'mr-1'}`}
 					/>
 				{/if}
 				{activities[0].state ? activities[0].state : ''}
