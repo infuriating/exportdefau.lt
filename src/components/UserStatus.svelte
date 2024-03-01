@@ -51,7 +51,7 @@
 					: data.discord_status.charAt(0).toUpperCase() + data.discord_status.slice(1)}
 			</p>
 		</div>
-		{#if activities}
+		{#if activities[0]}
 			<p
 				class="text-sm text-gray-300 flex items-center border border-neutral-300/20 py-px px-0.5 rounded-md"
 			>
@@ -61,7 +61,8 @@
 						alt="Emoji"
 						class="w-4 h-4 mr-1"
 					/>
-				{/if}{activities[0].state ? activities[0].state : ''}
+				{/if}
+				{activities[0].state ? activities[0].state : ''}
 			</p>
 		{/if}
 	</div>
