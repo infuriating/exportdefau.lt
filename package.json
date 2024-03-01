@@ -35,5 +35,9 @@
 		"unplugin-icons": "^0.18.5",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"firebase": "^9.23.0",
+		"sveltefire": "^0.4.5"
+	}
 }
