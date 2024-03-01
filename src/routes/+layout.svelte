@@ -1,7 +1,12 @@
-<script>
+<script lang="ts">
 	import '../app.css';
+
+	import { FirebaseApp } from 'sveltefire';
+	import { firestore } from '$lib/firebase';
 </script>
 
-<div class="bg-black text-white">
-	<slot />
-</div>
+<FirebaseApp {firestore}>
+	<div class="bg-black text-white">
+		<slot />
+	</div>
+</FirebaseApp>
