@@ -34,13 +34,22 @@
 				{/if}
 				<div class="flex flex-col justify-end py-2">
 					<h1 class="text-xl font-bold">{activity.name}</h1>
-					<p class="text-sm text-gray-300">
-						{activity.details ? activity.details : ''}
-					</p>
-					<p class="text-sm text-gray-300 flex items-center">
-						{activity.state ? activity.state : ''}
-					</p>
-					<p class="text-xs text-gray-300">{timeSince(activity.timestamps.start)}</p>
+					{#if activity.details}
+						<p class="text-sm text-gray-300">
+							{activity.details}
+						</p>
+					{/if}
+					{#if activity.state}
+						<p class="text-sm text-gray-300 flex items-center">
+							{activity.state}
+						</p>
+					{/if}
+					{#if activity.timestamps.start}
+						<p class="text-xs text-gray-300">{timeSince(activity.timestamps.start)}</p>
+					{/if}
+					{#if activity.created_at}
+						<p class="text-xs text-gray-300">{timeSince(activity.created_at)}</p>
+					{/if}
 				</div>
 			</div>
 		{/if}
