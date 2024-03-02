@@ -46,8 +46,7 @@
 					{/if}
 					{#if activity.timestamps.start}
 						<p class="text-xs text-gray-300">{timeSince(activity.timestamps.start)}</p>
-					{/if}
-					{#if activity.created_at}
+					{:else if activity.created_at}
 						<p class="text-xs text-gray-300">{timeSince(activity.created_at)}</p>
 					{/if}
 				</div>
