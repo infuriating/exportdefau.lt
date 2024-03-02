@@ -9,7 +9,7 @@
 	import InfsWorld from './InfsWorld.svelte';
 
 	export let userId: string;
-	export let socials: { url: string; icon: any }[];
+	export let socials: { url: string; icon: any }[] = [];
 
 	let user: DiscordUser;
 	let data: DiscordUser['data'];
@@ -62,7 +62,9 @@
 				{#if activities.filter((activity) => activity.name !== 'Spotify' && activity.name !== 'Custom Status').length > 0}
 					<Activities {activities} />
 				{/if}
-				<Socials {socials} />
+				{#if socials}
+					<Socials {socials} />
+				{/if}
 				<InfsWorld />
 			</div>
 		{:else}
