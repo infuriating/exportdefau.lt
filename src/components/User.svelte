@@ -10,6 +10,7 @@
 
 	export let userId: string;
 	export let socials: { url: string; icon: any }[] = [];
+	export let fullHeight: boolean = false;
 
 	let user: DiscordUser;
 	let data: DiscordUser['data'];
@@ -47,7 +48,7 @@
 	});
 </script>
 
-<div class="flex flex-col items-center justify-center min-h-screen">
+<div class={`flex flex-col items-center justify-center ${fullHeight && 'min-h-screen'}`}>
 	<div
 		class="w-full md:w-max bg-gradient-to-b from-purple-950/50 to-black p-3 rounded-lg shadow-2xl border border-neutral-300/20"
 	>
