@@ -64,3 +64,9 @@ export type DiscordUser = {
 	};
 	success: boolean;
 };
+
+export type Request = {
+	id: string;
+	slug: string;
+	userId: string;
+};
