@@ -38,13 +38,15 @@
 		}
 	};
 
-	onMount(async () => {
-		setTimeout(refreshUserData, 500);
-		const interval = setInterval(refreshUserData, 15000);
+	let interval: NodeJS.Timeout;
 
-		onDestroy(() => {
-			clearInterval(interval);
-		});
+	onMount(async () => {
+		await refreshUserData();
+		interval = setInterval(refreshUserData, 15000);
+	});
+
+	onDestroy(() => {
+		clearInterval(interval);
 	});
 </script>
 
