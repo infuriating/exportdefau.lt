@@ -15,7 +15,7 @@
 
 			slug = '';
 			userId = '';
-			window.location.href = '/request/thanks';
+			window.location.href = '/thanks';
 		} catch (e) {
 			console.error('Error adding document: ', e);
 		}
