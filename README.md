@@ -2,9 +2,11 @@
 
 This is my first svelte app, I am using it to learn the basics of svelte and to get a feel for how it works.
 
-## Discord User API
+## The Application
 
-This is svelte app uses an **Discord User API** to get user information, in this case I demonstrate it using my own user id.
+The application is a simple application that uses the lanyard API to get the current activity of a user. The user is specified by their discord user id.
+
+Using the Sveltefire library, I am able to put users onto a firebase database and then get the user from the database, using a slug, to display their current activity.
 
 ### API URL
 
